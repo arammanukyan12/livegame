@@ -1,0 +1,6 @@
+{
+  "name": "LiveGame",
+  "description": "Hardcore gamified discipline and extreme fitness platform featuring custom workout routines, deep discipline analytics, zero-tolerance strike system, and Telegram Stars monetization.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

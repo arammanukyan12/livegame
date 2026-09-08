@@ -1,0 +1,502 @@
+import { WorkoutProgram } from '../types';
+
+export const DEFAULT_WORKOUT_PROGRAMS: WorkoutProgram[] = [
+  // 1. CHEST & TRICEPS - "Iron Chest"
+  {
+    id: 'chest_lvl1',
+    title: {
+      en: 'Chest & Triceps — 100 Push-Ups Matrix',
+      ru: 'Грудь и Трицепс — Матрица 100 Отжиманий',
+    },
+    codeName: {
+      en: 'Iron Chest (Lvl 1)',
+      ru: 'Железная Грудь (Ур. 1)',
+    },
+    muscle: 'chest',
+    level: 1,
+    isExtreme: false,
+    estimatedMinutes: 22,
+    estimatedCalories: 260,
+    exercises: [
+      {
+        id: 'c1_diamond',
+        name: { en: 'Diamond Push-ups', ru: 'Алмазные отжимания' },
+        muscle: 'chest',
+        type: 'reps',
+        target: 20,
+        sets: 1,
+        restSeconds: 30,
+        description: {
+          en: 'Hands placed together forming a triangle under the sternum. Heavy tricep and inner chest overload.',
+          ru: 'Ладони сведены треугольником под грудью. Максимальный фокус на трицепс и центр груди.',
+        },
+        techniqueTip: {
+          en: 'Keep elbows tucked to sides, touch chest to hands.',
+          ru: 'Прижимайте локти к корпусу, касайтесь грудью кистей.',
+        },
+        difficulty: 'standard',
+      },
+      {
+        id: 'c1_wide',
+        name: { en: 'Wide-Grip Push-ups', ru: 'Широкие отжимания' },
+        muscle: 'chest',
+        type: 'reps',
+        target: 30,
+        sets: 1,
+        restSeconds: 30,
+        description: {
+          en: 'Hands 1.5x shoulder width. Intense pectoralis major stretch and activation.',
+          ru: 'Руки шире плеч в 1.5 раза. Глубокое растяжение и мощное сокращение грудных мышц.',
+        },
+        techniqueTip: {
+          en: 'Do not flare elbows back, maintain 45-degree angle.',
+          ru: 'Не задирайте локти перпендикулярно, держите угол 45°.',
+        },
+        difficulty: 'standard',
+      },
+      {
+        id: 'c1_standard',
+        name: { en: 'Strict Standard Push-ups', ru: 'Классические строгие отжимания' },
+        muscle: 'chest',
+        type: 'reps',
+        target: 30,
+        sets: 1,
+        restSeconds: 30,
+        description: {
+          en: 'Full range of motion, locked core, chest touching floor on each repetition.',
+          ru: 'Полная амплитуда, жесткий кор, касание грудью пола на каждом повторении.',
+        },
+        techniqueTip: {
+          en: 'Zero hip sagging. Full lockout at top.',
+          ru: 'Никаких провисаний в тазу. Полное выпрямление в верхней точке.',
+        },
+        difficulty: 'standard',
+      },
+      {
+        id: 'c1_pause',
+        name: { en: '3-Sec Pause Push-ups', ru: 'Отжимания с 3-сек паузой внизу' },
+        muscle: 'chest',
+        type: 'reps',
+        target: 20,
+        sets: 1,
+        restSeconds: 45,
+        description: {
+          en: 'Lower down, hold 1 inch off ground for 3 brutal seconds, explode upward.',
+          ru: 'Опуститесь, задержитесь в 2 см от пола на 3 секунды, взрывной подъем.',
+        },
+        techniqueTip: {
+          en: 'Eliminates stretch reflex, building pure isometric power.',
+          ru: 'Уничтожает мышечную инерцию, развивает абсолютную силу.',
+        },
+        difficulty: 'standard',
+      },
+    ],
+  },
+  {
+    id: 'chest_lvl2_extreme',
+    title: {
+      en: 'Iron Chest — Brutal Overload',
+      ru: 'Железная Грудь — Экстремальная Перегрузка',
+    },
+    codeName: {
+      en: 'Iron Chest EXTREME (Lvl 2)',
+      ru: 'Железная Грудь ЭКСТРИМ (Ур. 2)',
+    },
+    muscle: 'chest',
+    level: 2,
+    isExtreme: true,
+    estimatedMinutes: 28,
+    estimatedCalories: 380,
+    exercises: [
+      {
+        id: 'c2_clapping',
+        name: { en: 'Explosive Clapping Push-ups', ru: 'Взрывные отжимания с хлопком' },
+        muscle: 'chest',
+        type: 'reps',
+        target: 15,
+        sets: 4,
+        restSeconds: 25,
+        description: {
+          en: 'Explosive ballistic push off the floor with a clean clap before catching landing.',
+          ru: 'Мощный выталкивающий взрыв от пола с четким хлопком перед мягким приземлением.',
+        },
+        difficulty: 'extreme',
+      },
+      {
+        id: 'c2_decline',
+        name: { en: 'Feet-Elevated Decline Push-ups', ru: 'Отжимания с ногами на возвышении' },
+        muscle: 'chest',
+        type: 'reps',
+        target: 20,
+        sets: 4,
+        restSeconds: 25,
+        description: {
+          en: 'Elevate feet 50cm above hands. Shifts crushing load to upper clavicular pectorals and shoulders.',
+          ru: 'Ноги на возвышении 50 см. Вся нагрузка идет на верхний пучок груди и плечи.',
+        },
+        difficulty: 'extreme',
+      },
+      {
+        id: 'c2_dips_failure',
+        name: { en: 'Chair/Bench Dips — TO FAILURE', ru: 'Обратные отжимания — ДО ОТКАЗА' },
+        muscle: 'chest',
+        type: 'failure',
+        target: 40,
+        sets: 3,
+        restSeconds: 20,
+        isToFailure: true,
+        description: {
+          en: 'Perform continuous reps until mechanical muscle failure. Do not quit until elbows give out.',
+          ru: 'Непрерывные повторения до полного мышечного отказа. Ни шагу назад пока руки не откажут.',
+        },
+        techniqueTip: {
+          en: 'Count only crisp full-depth reps. Confirm failure when unable to lift.',
+          ru: 'Считайте только чистые глубокие повторения. Жмите до полного отказа.',
+        },
+        difficulty: 'extreme',
+      },
+    ],
+  },
+
+  // 2. BACK & BICEPS - "Demon Back"
+  {
+    id: 'back_lvl1',
+    title: {
+      en: 'Back & Biceps — Pyramids & Pauses',
+      ru: 'Спина и Бицепс — Пирамиды и Паузы',
+    },
+    codeName: {
+      en: 'Demon Back (Lvl 1)',
+      ru: 'Спина Демона (Ур. 1)',
+    },
+    muscle: 'back',
+    level: 1,
+    isExtreme: false,
+    estimatedMinutes: 25,
+    estimatedCalories: 310,
+    exercises: [
+      {
+        id: 'b1_pullups',
+        name: { en: 'Max Pull-up Pyramids (1-2-3-4-5-4-3-2-1)', ru: 'Пирамида подтягиваний (1-2-3-4-5-4-3-2-1)' },
+        muscle: 'back',
+        type: 'reps',
+        target: 25,
+        sets: 1,
+        restSeconds: 20,
+        description: {
+          en: 'Climb the pyramid with minimal rest between sets. Total 25 strict overhand reps.',
+          ru: 'Штурм пирамиды подтягиваний строгим хватом с паузой вверху. Всего 25 строгих повторений.',
+        },
+        difficulty: 'standard',
+      },
+      {
+        id: 'b1_australian',
+        name: { en: 'Australian Pull-ups (3s Peak Pause)', ru: 'Австралийские подтягивания с 3с фиксацией' },
+        muscle: 'back',
+        type: 'reps',
+        target: 15,
+        sets: 3,
+        restSeconds: 25,
+        description: {
+          en: 'Horizontal body rows. Squeeze scapulae together and hold chest at bar for 3 seconds.',
+          ru: 'Горизонтальные подтягивания. Максимально сведите лопатки и держите 3 секунды в пике.',
+        },
+        difficulty: 'standard',
+      },
+    ],
+  },
+  {
+    id: 'back_lvl2_extreme',
+    title: {
+      en: 'Demon Back — God of Calisthenics',
+      ru: 'Спина Демона — Бог Калистеники',
+    },
+    codeName: {
+      en: 'Demon Back EXTREME (Lvl 2)',
+      ru: 'Спина Демона ЭКСТРИМ (Ур. 2)',
+    },
+    muscle: 'back',
+    level: 2,
+    isExtreme: true,
+    estimatedMinutes: 30,
+    estimatedCalories: 420,
+    exercises: [
+      {
+        id: 'b2_archer',
+        name: { en: 'Archer Pull-ups (Unilateral Load)', ru: 'Луковые подтягивания (Archer Pull-ups)' },
+        muscle: 'back',
+        type: 'reps',
+        target: 12,
+        sets: 4,
+        restSeconds: 25,
+        description: {
+          en: 'Pull up towards one hand while fully extending the opposite arm laterally.',
+          ru: 'Тяга к одной руке с полным горизонтальным выпрямлением противоположной руки.',
+        },
+        difficulty: 'extreme',
+      },
+      {
+        id: 'b2_isometric',
+        name: { en: 'Isometric Chin-up Holds (Top Range)', ru: 'Изометрическое удержание подбородка над перекладиной' },
+        muscle: 'back',
+        type: 'isometric',
+        target: 30, // seconds
+        sets: 4,
+        restSeconds: 20,
+        description: {
+          en: 'Lock chin over bar, flex lats & biceps at maximum contraction without dropping.',
+          ru: 'Подбородок строго над турником, бицепсы и широчайшие каменные. 30 секунд без срыва.',
+        },
+        difficulty: 'extreme',
+      },
+      {
+        id: 'b2_doorway',
+        name: { en: 'Doorway Single-Arm Bicep Curls', ru: 'Тяга на бицепс в дверном проеме' },
+        muscle: 'back',
+        type: 'reps',
+        target: 20,
+        sets: 3,
+        restSeconds: 20,
+        description: {
+          en: 'Bodyweight isolation angle, targeting the bicep peak and brachialis with high tension.',
+          ru: 'Изоляция бицепса собственным весом под углом 45 градусов. Жжение до отказа.',
+        },
+        difficulty: 'extreme',
+      },
+    ],
+  },
+
+  // 3. LEGS & GLUTES - "Legs of Steel"
+  {
+    id: 'legs_lvl1',
+    title: {
+      en: 'Legs & Glutes — Volume Destroyer',
+      ru: 'Ноги и Ягодицы — Уничтожитель Объемом',
+    },
+    codeName: {
+      en: 'Legs of Steel (Lvl 1)',
+      ru: 'Стальные Ноги (Ур. 1)',
+    },
+    muscle: 'legs',
+    level: 1,
+    isExtreme: false,
+    estimatedMinutes: 24,
+    estimatedCalories: 340,
+    exercises: [
+      {
+        id: 'l1_squats',
+        name: { en: '150 Deep Air Squats', ru: '150 Глубоких воздушных приседаний' },
+        muscle: 'legs',
+        type: 'reps',
+        target: 150,
+        sets: 1,
+        restSeconds: 30,
+        description: {
+          en: 'Hip crease drops below knee level on every single rep. Relentless cadence.',
+          ru: 'Таз опускается ниже колена на каждом повторении. Монолитный неумолимый темп.',
+        },
+        difficulty: 'standard',
+      },
+      {
+        id: 'l1_bulgarian',
+        name: { en: 'Bulgarian Split Squats (2s Pause)', ru: 'Болгарские выпады с 2с паузой внизу' },
+        muscle: 'legs',
+        type: 'reps',
+        target: 20,
+        sets: 2, // each leg
+        restSeconds: 20,
+        description: {
+          en: 'Rear foot elevated on chair or bed. Deep knee drop with a 2-second brutal pause.',
+          ru: 'Задняя нога на возвышении. Глубокий сед с двухсекундной фиксацией внизу.',
+        },
+        difficulty: 'standard',
+      },
+      {
+        id: 'l1_wallsit',
+        name: { en: 'Wall Sit Isometric Hold (2 Minutes)', ru: 'Стульчик у стены (2 Минуты)' },
+        muscle: 'legs',
+        type: 'isometric',
+        target: 120, // 120 seconds
+        sets: 1,
+        restSeconds: 30,
+        description: {
+          en: 'Back flat against wall, 90-degree bend at knees. Hands off legs. Pure mental grit.',
+          ru: 'Спина прижата к стене, бедра строго параллельны полу (90°). Руки у груди.',
+        },
+        difficulty: 'standard',
+      },
+    ],
+  },
+  {
+    id: 'legs_lvl2_extreme',
+    title: {
+      en: 'Legs of Steel — Quadriceps Executioner',
+      ru: 'Стальные Ноги — Палач Квадрицепсов',
+    },
+    codeName: {
+      en: 'Legs of Steel EXTREME (Lvl 2)',
+      ru: 'Стальные Ноги ЭКСТРИМ (Ур. 2)',
+    },
+    muscle: 'legs',
+    level: 2,
+    isExtreme: true,
+    estimatedMinutes: 30,
+    estimatedCalories: 460,
+    exercises: [
+      {
+        id: 'l2_pistol',
+        name: { en: 'Pistol Squats (Single Leg Freedom)', ru: 'Пистолетики (Приседания на одной ноге)' },
+        muscle: 'legs',
+        type: 'reps',
+        target: 15,
+        sets: 3,
+        restSeconds: 25,
+        description: {
+          en: 'Full single-leg depth with non-working leg extended straight forward. Ultimate balance & force.',
+          ru: 'Полный присед на одной ноге, вторая вытянута прямо. Абсолютный баланс и мощь.',
+        },
+        difficulty: 'extreme',
+      },
+      {
+        id: 'l2_jump_failure',
+        name: { en: 'Tuck Jump Squats — TO FAILURE', ru: 'Взрывные приседания с поджатием — ДО ОТКАЗА' },
+        muscle: 'legs',
+        type: 'failure',
+        target: 40,
+        sets: 3,
+        restSeconds: 20,
+        isToFailure: true,
+        description: {
+          en: 'Explode straight up bringing knees to chest. Repeat without resting until legs give out.',
+          ru: 'Максимальный взрыв вверх с подтягиванием коленей к груди. До полного мышечного отказа.',
+        },
+        difficulty: 'extreme',
+      },
+      {
+        id: 'l2_bridge_pulse',
+        name: { en: 'Single-Leg Glute Bridge Pulses', ru: 'Пульсирующий ягодичный мостик на одной ноге' },
+        muscle: 'legs',
+        type: 'reps',
+        target: 25,
+        sets: 3,
+        restSeconds: 15,
+        description: {
+          en: 'Drive through the heel at top position with burning high-frequency pulses.',
+          ru: 'Выталкивание пяткой в верхней точке с частыми мощными пульсациями в пике.',
+        },
+        difficulty: 'extreme',
+      },
+    ],
+  },
+
+  // 4. ABS & CORE - "Titan Core"
+  {
+    id: 'core_lvl1',
+    title: {
+      en: 'Abs & Core — Hardened Midsection',
+      ru: 'Пресс и Кор — Стальной Панцирь',
+    },
+    codeName: {
+      en: 'Titan Core (Lvl 1)',
+      ru: 'Титановый Кор (Ур. 1)',
+    },
+    muscle: 'core',
+    level: 1,
+    isExtreme: false,
+    estimatedMinutes: 20,
+    estimatedCalories: 240,
+    exercises: [
+      {
+        id: 'co1_dragon',
+        name: { en: 'Dragon Flag Progressions', ru: 'Прогрессия "Флаг Дракона" (Брюс Ли)' },
+        muscle: 'core',
+        type: 'reps',
+        target: 12,
+        sets: 3,
+        restSeconds: 30,
+        description: {
+          en: 'Anchor shoulders to bench/floor and lift entire torso in straight rigid line.',
+          ru: 'Упор на плечи, подъем всего тела в единую прямую линию как у Брюса Ли.',
+        },
+        difficulty: 'standard',
+      },
+      {
+        id: 'co1_vups',
+        name: { en: 'Jackknife V-Up Crunches', ru: 'Складка "V-Ups" на пресс' },
+        muscle: 'core',
+        type: 'reps',
+        target: 25,
+        sets: 3,
+        restSeconds: 25,
+        description: {
+          en: 'Simultaneously elevate legs and torso, touching toes at the apex.',
+          ru: 'Одновременный подъем прямых ног и корпуса с касанием носков в верхней точке.',
+        },
+        difficulty: 'standard',
+      },
+      {
+        id: 'co1_hollow',
+        name: { en: 'Hollow Body Isometric Hold (1 min)', ru: 'Лодочка (Hollow Body) — 60 секунд' },
+        muscle: 'core',
+        type: 'isometric',
+        target: 60,
+        sets: 1,
+        restSeconds: 30,
+        description: {
+          en: 'Lower back glued to floor, shoulder blades off ground, legs hovering 6 inches up.',
+          ru: 'Поясница намертво вжата в пол, лопатки оторваны, ноги на весу в 15 см от пола.',
+        },
+        difficulty: 'standard',
+      },
+    ],
+  },
+  {
+    id: 'core_lvl2_extreme',
+    title: {
+      en: 'Titan Core — Brutal 3-Minute Matrix',
+      ru: 'Титановый Кор — 3-Минутная Матрица Планки',
+    },
+    codeName: {
+      en: 'Titan Core EXTREME (Lvl 2)',
+      ru: 'Титановый Кор ЭКСТРИМ (Ур. 2)',
+    },
+    muscle: 'core',
+    level: 2,
+    isExtreme: true,
+    estimatedMinutes: 26,
+    estimatedCalories: 360,
+    exercises: [
+      {
+        id: 'co2_plank_matrix',
+        name: {
+          en: '3-Minute Non-Stop Plank Matrix',
+          ru: '3-Минутная Непрерывная Матрица Планки (1м + 30с Лев + 30с Прав + 1м Динамика)',
+        },
+        muscle: 'core',
+        type: 'isometric',
+        target: 180, // 3 minutes = 180s
+        sets: 1,
+        restSeconds: 30,
+        description: {
+          en: '1 min Standard Forearm Plank + 30s Left Side Plank + 30s Right Side Plank + 1 min Dynamic Spider Plank. Knees cannot touch floor.',
+          ru: '1 мин строгая планка на предплечьях + 30с боковая слева + 30с боковая справа + 1 мин динамическая планка. Колени пола не касаются!',
+        },
+        difficulty: 'extreme',
+      },
+      {
+        id: 'co2_lsit',
+        name: { en: 'L-Sit Isometric Floor Hold', ru: 'Уголок на полу (L-Sit)' },
+        muscle: 'core',
+        type: 'isometric',
+        target: 30,
+        sets: 4,
+        restSeconds: 20,
+        description: {
+          en: 'Palms pressing down to elevate hips and legs entirely parallel off the floor.',
+          ru: 'Руки у бедер, отрыв таза и прямых ног от пола в идеальную букву L.',
+        },
+        difficulty: 'extreme',
+      },
+    ],
+  },
+];
